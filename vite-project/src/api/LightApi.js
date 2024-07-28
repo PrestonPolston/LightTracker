@@ -6,18 +6,32 @@ export const lightApi = createApi({
     baseUrl: "http://localhost:3000",
   }),
   endpoints: (builder) => ({
-    getShow: builder.query({ query: () => "/api/show" }),
-
-    getAllShowData: builder.query({ query: (id) => `/api/show/${id}/data` }),
+    getShow: builder.query({
+      query: () => "/api/show",
+    }),
+    getAllShowData: builder.query({
+      query: (id) => `/api/show/${id}/data`,
+    }),
     createShow: builder.mutation({
       query: (showData) => ({
         url: "api/show",
         method: "POST",
         body: showData,
       }),
-      getSet: builder.query({ query: () => "/api/set" }),
+    }),
+    getLightsBySetId: builder.query({
+      query: (setId) => `/api/sets/${setId}/lights`,
+    }),
+    getSet: builder.query({
+      query: () => "/api/set",
     }),
   }),
 });
 
-export const { useGetShowQuery, useGetAllShowDataQuery } = lightApi;
+export const {
+  useGetShowQuery,
+  useGetAllShowDataQuery,
+  useCreateShowMutation,
+  useGetLightsBySetIdQuery,
+  useGetSetQuery,
+} = lightApi;
