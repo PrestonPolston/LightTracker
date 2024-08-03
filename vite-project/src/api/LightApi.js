@@ -19,6 +19,13 @@ export const lightApi = createApi({
         body: showData,
       }),
     }),
+    createInput: builder.mutation({
+      query: (fileData) => ({
+        url: "/api/input",
+        method: "POST",
+        body: fileData,
+      }),
+    }),
     getLightsBySetId: builder.query({
       query: (setId) => `/api/sets/${setId}/lights`,
     }),
@@ -32,6 +39,7 @@ export const {
   useGetShowQuery,
   useGetAllShowDataQuery,
   useCreateShowMutation,
+  useCreateInputMutation,
   useGetLightsBySetIdQuery,
   useGetSetQuery,
 } = lightApi;

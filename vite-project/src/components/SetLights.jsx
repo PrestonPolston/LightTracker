@@ -1,13 +1,11 @@
-import React from "react";
 import { useParams } from "react-router-dom";
-import { useGetLightsBySetIdQuery } from "../api/LightApi"; // Update the path as necessary
+import { useGetLightsBySetIdQuery } from "../api/LightApi";
 
 const SetLights = () => {
-  const { setId } = useParams(); // Extract setId from URL parameters
-  console.log(setId);
-  // Use the custom hook to fetch lights based on the setId
-  const { data: lights, error, isLoading } = useGetLightsBySetIdQuery(setId);
+  const { setId } = useParams();
 
+  const { data: lights, error, isLoading } = useGetLightsBySetIdQuery(setId);
+  console.log(lights);
   if (isLoading) {
     return <p>Loading lights...</p>;
   }
@@ -23,9 +21,14 @@ const SetLights = () => {
         <ul>
           {lights.map((light) => (
             <li key={light.id}>
-              <p>Light Type: {light.lightType}</p>
+              <p>Show: {light.show.name}</p>
+              <p>Set: {light.set.set}</p>
+              <p>Location: {light.set.location}</p>
+              <p>Fixture Number: {light.fixtureNumber}</p>
+              <p>Universe: {light.universe.universeId}</p>
               <p>Address: {light.address}</p>
               <p>Mode: {light.mode}</p>
+              <p>Notes: {light.notes}</p>
             </li>
           ))}
         </ul>

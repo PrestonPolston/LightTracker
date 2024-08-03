@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const { data: shows, isLoading, isError } = useGetShowQuery();
   const navigate = useNavigate();
+
   if (isLoading) {
     return <div>Loading shows...</div>;
   }
@@ -11,6 +12,14 @@ const HomePage = () => {
   if (isError) {
     return <div>Error loading shows. Please try again later.</div>;
   }
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    console.log("File selected:", file);
+    if (file) {
+      navigate("/loadFile", { state: { fileData: file } });
+    }
+  };
 
   const handleShowClick = (id) => {
     navigate(`/show/${id}`);
@@ -34,6 +43,16 @@ const HomePage = () => {
       ) : (
         <p>No shows available.</p>
       )}
+      <div>
+        <label htmlFor="file-upload" style={{ cursor: "pointer" }}>
+          <button type="button">Add Show</button>
+          <input
+            id="file-upload"
+            type="file"
+            onChange={handleFileUpload} // Use onChange here
+          />
+        </label>
+      </div>
     </div>
   );
 };
