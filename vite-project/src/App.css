@@ -103,3 +103,38 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* Styles for SetCard component */
+.set-card {
+  border: 1px solid #4640a4;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px;
+  background-color: #a59f9f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.set-card:hover {
+  transform: scale(1.02);
+}
+
+.set-card h4 {
+  margin: 0 0 10px;
+}
+
+.set-card p {
+  margin: 5px 0;
+}
+
+/* Styles for SelectedShow component */
+.selected-show {
+  padding: 20px;
+}
+
+.sets-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

@@ -1,55 +1,260 @@
 // universeLook.js
 const universeStyles = {
-  1: { backgroundColor: "#FFDDC1", color: "#D30000" }, // Light red
-  2: { backgroundColor: "#C1E1FF", color: "#0044CC" }, // Light blue
-  3: { backgroundColor: "#D1FFD1", color: "#008C00" }, // Light green
-  4: { backgroundColor: "#FFF4C1", color: "#CC8800" }, // Light yellow
-  5: { backgroundColor: "#FFD1DC", color: "#CC0044" }, // Light pink
-  6: { backgroundColor: "#D4C1FF", color: "#5000CC" }, // Light purple
-  7: { backgroundColor: "#FFC1C1", color: "#CC0000" }, // Light coral
-  8: { backgroundColor: "#E1FFC1", color: "#4CAF50" }, // Light lime
-  9: { backgroundColor: "#C1F2F4", color: "#009688" }, // Light teal
-  10: { backgroundColor: "#C1D2FF", color: "#3F51B5" }, // Light indigo
-  11: { backgroundColor: "#FFEDC1", color: "#FF9800" }, // Light orange
-  12: { backgroundColor: "#D1F7D1", color: "#76FF03" }, // Light apple green
-  13: { backgroundColor: "#F2C1FF", color: "#D5006D" }, // Light violet
-  14: { backgroundColor: "#D4C1C1", color: "#B72B2B" }, // Light rose
-  15: { backgroundColor: "#C3E8FF", color: "#1976D2" }, // Light sky
-  16: { backgroundColor: "#D9C1FF", color: "#7C4DFF" }, // Light lavender
-  17: { backgroundColor: "#E2CFC1", color: "#C67C00" }, // Light sandstone
-  18: { backgroundColor: "#C1FFD9", color: "#009688" }, // Light mint
-  19: { backgroundColor: "#F6C1DF", color: "#D81B60" }, // Light fuchsia
-  20: { backgroundColor: "#FFCCFF", color: "#880E4F" }, // Light magenta
-  21: { backgroundColor: "#D1F1FF", color: "#0288D1" }, // Light azure
-  22: { backgroundColor: "#E1FFC7", color: "#7D8B3A" }, // Light spinach
-  23: { backgroundColor: "#FFB1C1", color: "#FF6F61" }, // Light cherry
-  24: { backgroundColor: "#D3C1FF", color: "#6A1B9A" }, // Light eggplant
-  25: { backgroundColor: "#FFC3C3", color: "#FF2B00" }, // Light crimson
-  26: { backgroundColor: "#D4D1C1", color: "#704D3D" }, // Light tan
-  27: { backgroundColor: "#C1FFC1", color: "#4CAF50" }, // Light grass
-  28: { backgroundColor: "#E7C6B2", color: "#A25C28" }, // Light beige
-  29: { backgroundColor: "#D2F4FF", color: "#007C92" }, // Light cerulean
-  30: { backgroundColor: "#EBC3C3", color: "#A33A30" }, // Light rosewood
-  31: { backgroundColor: "#F9E6C1", color: "#FFC107" }, // Light golden
-  32: { backgroundColor: "#C1FFD7", color: "#007A5E" }, // Light forest
-  33: { backgroundColor: "#F9C1D1", color: "#C2185B" }, // Light rosy
-  34: { backgroundColor: "#D1E3F4", color: "#3F83C5" }, // Light lightblue
-  35: { backgroundColor: "#E1FFC1", color: "#7B1FA2" }, // Light purple green
-  36: { backgroundColor: "#FFC1C3", color: "#C51162" }, // Light ruby
-  37: { backgroundColor: "#FFEA3F", color: "#F44336" }, // Light yellow-orange
-  38: { backgroundColor: "#FFE9C4", color: "#B9BC37" }, // Light mustard
-  39: { backgroundColor: "#D2FFC1", color: "#7D622D" }, // Light pale-green
-  40: { backgroundColor: "#CFD8DC", color: "#424242" }, // Light grey
-  41: { backgroundColor: "#F4DDC1", color: "#A68A42" }, // Light caramel
-  42: { backgroundColor: "#C1A9FF", color: "#4A148C" }, // Light periwinkle
-  43: { backgroundColor: "#FFDBB5", color: "#D76D25" }, // Light orange-brown
-  44: { backgroundColor: "#E0C3FF", color: "#2E7D32" }, // Light lilac
-  45: { backgroundColor: "#FFC3D1", color: "#C2185B" }, // Light blush
-  46: { backgroundColor: "#C1FFC6", color: "#1B5E20" }, // Light spring green
-  47: { backgroundColor: "#E7B4C2", color: "#7B1FA2" }, // Light rose gold
-  48: { backgroundColor: "#F4C7C3", color: "#C94A17" }, // Light salmon
-  49: { backgroundColor: "#C3E7F4", color: "#00796B" }, // Light lagoon
-  50: { backgroundColor: "#FFE9B2", color: "#F57F20" }, // Light sunflower
+  1: {
+    primaryColor: "#FF0000",
+    secondaryColor: "NA",
+    textColor: "#FFFFFF",
+  },
+  2: {
+    primaryColor: "#00FF00",
+    secondaryColor: "NA",
+    textColor: "#FFFFFF",
+  },
+  3: {
+    primaryColor: "#0000FF",
+    secondaryColor: "NA",
+    textColor: "#FFFFFF",
+  },
+  4: {
+    primaryColor: "#00FFFF",
+    secondaryColor: "NA",
+    textColor: "#000000",
+  },
+  5: {
+    primaryColor: "#FF00FF",
+    secondaryColor: "NA",
+    textColor: "#000000",
+  },
+  6: {
+    primaryColor: "#FFFF00",
+    secondaryColor: "NA",
+    textColor: "#000000",
+  },
+  7: {
+    primaryColor: "#FFA500",
+    secondaryColor: "NA",
+    textColor: "#000000",
+  },
+  8: {
+    primaryColor: "#964B00",
+    secondaryColor: "NA",
+    textColor: "#FFFFFF",
+  },
+  9: {
+    primaryColor: "#808080",
+    secondaryColor: "NA",
+    textColor: "#FFFFFF",
+  },
+  10: {
+    primaryColor: "#FF0000",
+    secondaryColor: "#000000",
+    textColor: "#FFFFFF",
+  },
+  11: {
+    primaryColor: "##00FF00",
+    secondaryColor: "#000000",
+    textColor: "#FFFFFF",
+  },
+  12: {
+    primaryColor: "#0000FF",
+    secondaryColor: "#000000",
+    textColor: "#FFFFFF",
+  },
+  13: {
+    primaryColor: "#00FFFF",
+    secondaryColor: "#000000",
+    textColor: "#FFFFFF",
+  },
+  14: {
+    primaryColor: "#FF00FF",
+    secondaryColor: "#000000",
+    textColor: "#FFFFFF",
+  },
+  15: {
+    primaryColor: "#FFFF00",
+    secondaryColor: "#000000",
+    textColor: "#FFFFFF",
+  },
+  16: {
+    primaryColor: "#D9C1FF",
+    secondaryColor: "#000000",
+    textColor: "#FFFFFF",
+  },
+  17: {
+    primaryColor: "#964B00",
+    secondaryColor: "#000000",
+    textColor: "#FFFFFF",
+  },
+  18: {
+    primaryColor: "#808080",
+    secondaryColor: "#000000",
+    textColor: "#FFFFFF",
+  },
+  19: {
+    primaryColor: "#FF0000",
+    secondaryColor: "#FFFFFF",
+    textColor: "#FFFFFF",
+  },
+  20: {
+    primaryColor: "#00FF00",
+    secondaryColor: "#FFFFFF",
+    textColor: "#FFFFFF",
+  },
+  21: {
+    primaryColor: "#0000FF",
+    secondaryColor: "#FFFFFF",
+    textColor: "#FFFFFF",
+  },
+  22: {
+    primaryColor: "#00FFFF",
+    secondaryColor: "#FFFFFF",
+    textColor: "#000000",
+  },
+  23: {
+    primaryColor: "#FF00FF",
+    secondaryColor: "#FFFFFF",
+    textColor: "#FFFFFF",
+  },
+  24: {
+    primaryColor: "#FFFF00",
+    secondaryColor: "#FFFFFF",
+    textColor: "#000000",
+  },
+  25: {
+    primaryColor: "#D9C1FF",
+    secondaryColor: "#FFFFFF",
+    textColor: "#FFFFFF",
+  },
+  26: {
+    primaryColor: "#964B00",
+    secondaryColor: "#FFFFFF",
+    textColor: "#FFFFFF",
+  },
+  27: {
+    primaryColor: "#808080",
+    secondaryColor: "#FFFFFF",
+    textColor: "#FFFFFF",
+  },
+  28: {
+    primaryColor: "#E7C6B2",
+    secondaryColor: "#A25C28",
+    textColor: "#A25C28",
+  },
+  29: {
+    primaryColor: "#D2F4FF",
+    secondaryColor: "#007C92",
+    textColor: "#007C92",
+  },
+  30: {
+    primaryColor: "#EBC3C3",
+    secondaryColor: "#A33A30",
+    textColor: "#A33A30",
+  },
+  31: {
+    primaryColor: "#F9E6C1",
+    secondaryColor: "#FFC107",
+    textColor: "#FFC107",
+  },
+  32: {
+    primaryColor: "#C1FFD7",
+    secondaryColor: "#007A5E",
+    textColor: "#007A5E",
+  },
+  33: {
+    primaryColor: "#F9C1D1",
+    secondaryColor: "#C2185B",
+    textColor: "#C2185B",
+  },
+  34: {
+    primaryColor: "#D1E3F4",
+    secondaryColor: "#3F83C5",
+    textColor: "#3F83C5",
+  },
+  35: {
+    primaryColor: "#E1FFC1",
+    secondaryColor: "#7B1FA2",
+    textColor: "#7B1FA2",
+  },
+  36: {
+    primaryColor: "#FFC1C3",
+    secondaryColor: "#C51162",
+    textColor: "#C51162",
+  },
+  37: {
+    primaryColor: "#FFEA3F",
+    secondaryColor: "#F44336",
+    textColor: "#F44336",
+  },
+  38: {
+    primaryColor: "#FFE9C4",
+    secondaryColor: "#B9BC37",
+    textColor: "#B9BC37",
+  },
+  39: {
+    primaryColor: "#D2FFC1",
+    secondaryColor: "#7D622D",
+    textColor: "#7D622D",
+  },
+  40: {
+    primaryColor: "#CFD8DC",
+    secondaryColor: "#424242",
+    textColor: "#424242",
+  },
+  41: {
+    primaryColor: "#F4DDC1",
+    secondaryColor: "#A68A42",
+    textColor: "#A68A42",
+  },
+  42: {
+    primaryColor: "#C1A9FF",
+    secondaryColor: "#4A148C",
+    textColor: "#4A148C",
+  },
+  43: {
+    primaryColor: "#FFDBB5",
+    secondaryColor: "#D76D25",
+    textColor: "#D76D25",
+  },
+  44: {
+    primaryColor: "#E0C3FF",
+    secondaryColor: "#2E7D32",
+    textColor: "#2E7D32",
+  },
+  45: {
+    primaryColor: "#FFC3D1",
+    secondaryColor: "#C2185B",
+    textColor: "#C2185B",
+  },
+  46: {
+    primaryColor: "#C1FFC6",
+    secondaryColor: "#1B5E20",
+    textColor: "#1B5E20",
+  },
+  47: {
+    primaryColor: "#E7B4C2",
+    secondaryColor: "#7B1FA2",
+    textColor: "#7B1FA2",
+  },
+  48: {
+    primaryColor: "#F4C7C3",
+    secondaryColor: "#C94A17",
+    textColor: "#C94A17",
+  },
+  49: {
+    primaryColor: "#C3E7F4",
+    secondaryColor: "#00796B",
+    textColor: "#00796B",
+  },
+  50: {
+    primaryColor: "#FFE9B2",
+    secondaryColor: "#F57F20",
+    textColor: "#F57F20",
+  },
+  51: { primaryColor: "", secondaryColor: "", textColor: "" },
+  52: { primaryColor: "", secondaryColor: "", textColor: "" },
+  53: { primaryColor: "", secondaryColor: "", textColor: "" },
+  54: { primaryColor: "", secondaryColor: "", textColor: "" },
+  55: { primaryColor: "", secondaryColor: "", textColor: "" },
 };
 
 export const getUniverseStyle = (universeId) => {

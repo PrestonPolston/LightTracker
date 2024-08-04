@@ -23,7 +23,8 @@ const LoadFile = () => {
             navigate("/");
           } else {
             console.error("Error occurred:", response.error);
-            // navigate("/");
+            // need to work on logic to show what lights failed if any then navigate home once acknowledged
+            navigate("/");
           }
         } catch (error) {
           console.error("Error occurred:", error);
