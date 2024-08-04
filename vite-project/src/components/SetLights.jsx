@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useGetLightsBySetIdQuery } from "../api/LightApi";
+import { getUniverseStyle } from "../universeLook";
 
 const SetLights = () => {
   const { setId } = useParams();
-
   const { data: lights, error, isLoading } = useGetLightsBySetIdQuery(setId);
 
   if (isLoading) {
@@ -19,38 +19,49 @@ const SetLights = () => {
       <h1>Lights for Set ID: {setId}</h1>
       <div className="label-container">
         {lights && lights.length > 0 ? (
-          lights.map((light) => (
-            <div key={light.id} className="lightLabel">
-              <div className="label-header">
-                <div className="showKey">{light.show.name}</div>
-                <div className="setKey">{light.set.set}</div>
-                <div className="locationKey">{light.set.location}</div>
-              </div>
-              <div className="header-divider"></div>
-              <div className="fixture-details">
-                <p className="fixtureTypeValue">{light.lightType}</p>
-                <p className="fixtureNumberValue">{light.fixtureNumber}</p>
-              </div>
-              <div className="details">
-                <div>
-                  <p className="universeKey">Universe:</p>
-                  <p className="universeValue">{light.universe.universeId}</p>
+          lights.map((light) => {
+            // Retrieve universe style based on universe ID
+            const universeStyle = getUniverseStyle(light.universe.universeId);
+
+            return (
+              <div key={light.id} className="lightLabel">
+                <div className="label-header">
+                  <div className="showKey">{light.show.name}</div>
+                  <div className="setKey">{light.set.set}</div>
+                  <div className="locationKey">{light.set.location}</div>
                 </div>
-                <div>
-                  <p className="addressKey">Address:</p>
-                  <p className="addressValue">{light.address}</p>
+                <div className="header-divider"></div>
+                <div className="fixture-details">
+                  <p className="fixtureTypeValue">{light.lightType}</p>
+                  <p className="fixtureNumberValue">{light.fixtureNumber}</p>
                 </div>
-                <div>
-                  <p className="modeKey">Mode:</p>
-                  <p className="modeValue">{light.mode}</p>
+                <div className="details">
+                  <div
+                    style={{
+                      backgroundColor: universeStyle.backgroundColor,
+                      padding: "5px",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    <p className="universeKey">Universe:</p>
+                    <p className="universeValue">{light.universe.universeId}</p>
+                  </div>
+                  <div>
+                    <p className="addressKey">Address:</p>
+                    <p className="addressValue">{light.address}</p>
+                  </div>
+                  <div>
+                    <p className="modeKey">Mode:</p>
+                    <p className="modeValue">{light.mode}</p>
+                  </div>
+                </div>
+                <div className="notesSection">
+                  <p className="notesKey">Notes:</p>
+                  <p className="notesValue">{light.notes}</p>
                 </div>
               </div>
-              <div className="notesSection">
-                <p className="notesKey">Notes:</p>
-                <p className="notesValue">{light.notes}</p>
-              </div>
-            </div>
-          ))
+            );
+          })
         ) : (
           <p>No lights found for this set.</p>
         )}

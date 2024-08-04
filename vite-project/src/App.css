@@ -1,100 +1,105 @@
 .label-container {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
-  width: 100%; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .lightLabel {
-  width: 4in; 
-  height: 2in; 
-  box-sizing: border-box; 
-  font-family: "Arial", sans-serif; 
-  font-size: 12px; 
-  background-color: #f5f5f5; 
-  border: 1px solid #ccc; 
-  border-radius: 5px; 
-  padding: 5px; 
+  width: 4in;
+  height: 2in;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  background-color: #fffefe;
+  border: 1px solid #b4b2b2;
+  border-radius: 5px;
+  padding: 5px;
   display: flex;
-  flex-direction: column; 
-  justify-content: flex-start; 
+  flex-direction: column;
 }
 
 .label-header {
-  display: flex; 
-  justify-content: space-between; 
-  margin-bottom: 5px; 
+  display: flex;
+  justify-content: space-between;
+  font-size: 50%;
+  width: 100%;
 }
 
 .label-header > div {
-  flex: 1; 
-  text-align: center; 
-  font-weight: bold; 
-  color: #333; 
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.locationKey {
+  background-color: yellow;
 }
 
 .header-divider {
-  border-bottom: 1px solid #ccc; 
-  margin: 5px 0; /
+  border-bottom: 1px solid #000000;
 }
 
 .fixture-details {
-  background-color: yellow; 
+  background-color: yellow;
   color: #000000;
-  text-align: center; 
-  padding: 1px; 
-  margin: 0; 
+  text-align: center;
+  padding: 1px;
+  margin: 0;
+  flex: 1;
 }
 
 .fixtureTypeValue {
-  text-decoration: underline; 
-  font-size: 12px; 
-  color: #000; 
+  text-align: center;
+  text-decoration: underline;
 }
 .fixtureNumberValue {
-  font-weight: bold; 
-  font-size: 14px; 
-  color: #000;
+  text-align: center;
+  font-weight: bolder;
 }
 
 .details {
-  display: flex; 
-  justify-content: space-between; 
-  flex: 1; 
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
   border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000; 
-  padding-bottom: 5px; 
+  border-bottom: 1px solid #000000;
   color: #000000;
 }
 
 .details > div {
-  flex: 1; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  margin: 0 5px; 
-  min-width: 0; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  width: 30%;
 }
 
 .details p {
   margin: 0;
-  font-size: 11px; 
+  font-size: 11px;
 }
 
 .notesSection {
-  display: flex; 
-  justify-content: space-between; 
-  margin-top: auto; 
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .notesKey {
-  font-weight: bold; 
-  color: #333; 
+  font-weight: bolder;
+  color: #333;
+  font-size: 11px;
 }
 
 .notesValue {
-  overflow-wrap: break-word; 
+  overflow-wrap: break-word;
   word-wrap: break-word;
-  hyphens: auto; 
+  font-size: 11px;
+  hyphens: auto;
   color: #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
