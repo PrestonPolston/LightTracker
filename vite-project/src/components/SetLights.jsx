@@ -5,7 +5,7 @@ const SetLights = () => {
   const { setId } = useParams();
 
   const { data: lights, error, isLoading } = useGetLightsBySetIdQuery(setId);
-  console.log(lights);
+
   if (isLoading) {
     return <p>Loading lights...</p>;
   }
@@ -17,24 +17,44 @@ const SetLights = () => {
   return (
     <div>
       <h1>Lights for Set ID: {setId}</h1>
-      {lights && lights.length > 0 ? (
-        <ul>
-          {lights.map((light) => (
-            <li key={light.id}>
-              <p>Show: {light.show.name}</p>
-              <p>Set: {light.set.set}</p>
-              <p>Location: {light.set.location}</p>
-              <p>Fixture Number: {light.fixtureNumber}</p>
-              <p>Universe: {light.universe.universeId}</p>
-              <p>Address: {light.address}</p>
-              <p>Mode: {light.mode}</p>
-              <p>Notes: {light.notes}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No lights found for this set.</p>
-      )}
+      <div className="label-container">
+        {lights && lights.length > 0 ? (
+          lights.map((light) => (
+            <div key={light.id} className="lightLabel">
+              <div className="label-header">
+                <div className="showKey">{light.show.name}</div>
+                <div className="setKey">{light.set.set}</div>
+                <div className="locationKey">{light.set.location}</div>
+              </div>
+              <div className="header-divider"></div>
+              <div className="fixture-details">
+                <p className="fixtureTypeValue">{light.lightType}</p>
+                <p className="fixtureNumberValue">{light.fixtureNumber}</p>
+              </div>
+              <div className="details">
+                <div>
+                  <p className="universeKey">Universe:</p>
+                  <p className="universeValue">{light.universe.universeId}</p>
+                </div>
+                <div>
+                  <p className="addressKey">Address:</p>
+                  <p className="addressValue">{light.address}</p>
+                </div>
+                <div>
+                  <p className="modeKey">Mode:</p>
+                  <p className="modeValue">{light.mode}</p>
+                </div>
+              </div>
+              <div className="notesSection">
+                <p className="notesKey">Notes:</p>
+                <p className="notesValue">{light.notes}</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No lights found for this set.</p>
+        )}
+      </div>
     </div>
   );
 };
